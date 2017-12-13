@@ -1,0 +1,36 @@
+.top0{
+   background-color: red;
+  width:1080px;
+  height: 400px;  
+  margin:auto;
+  text-align: center;
+}
+.top2{
+    display:flex;
+}
+ 
+.fieldinput{
+ font-size:30px;
+ -webkit-text-fill-color: white;
+ cursor: pointer;
+}
+p{
+    font-size:45px;
+    margin-top: 10px;
+}
+.field-block{
+    height:200px;
+    margin:auto;
+    width:200px;
+    opacity:50%;
+    background-color:#f9bad0;
+}
+.play-again{
+    width:800px;
+    height: 50px;
+    justify-content: justify;
+    display: flex;
+    margin:auto;
+    margin-top: 45px;
+    background-color: blue;
+}
