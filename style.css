@@ -34,3 +34,22 @@ p{
     margin-top: 45px;
     background-color: blue;
 }
+.option{
+    margin:auto;
+    margin-top: 44px;
+    font-size:55px;
+    text-align:center;
+    justify-content: justify;
+}
+.option1{
+    flex:1;
+}
+.option2{
+    flex:1;
+}
+.option3{
+    flex:1;
+}
+.option4{
+    flex:1;
+} 
