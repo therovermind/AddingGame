@@ -4,6 +4,7 @@
   height: 400px;  
   margin:auto;
   text-align: center;
+  z-index:1;
 }
 .top2{
     display:flex;
