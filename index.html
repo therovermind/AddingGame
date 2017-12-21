@@ -8,8 +8,8 @@
        
    </head>
 
-   <body>
-       <h1 style="font-color:blue;font-style:verdana;text-align:center">
+   <body onload="playgame()">
+       <h1 style="font-style:verdana;text-align:center">
            This is a Practice Play Game in Javascript!
        </h1>
       
@@ -46,7 +46,7 @@
                     </div>
                  </div> 
                  <div class="play-again">
-                      <p style="text-align:center;margin:auto">
+                      <p style="text-align:center;margin:auto;color:white;font-size:15px;">
                           Play again!
                       </p>
                  </div>
@@ -55,7 +55,19 @@
            
        </div>
        <script>
-           
+          
+          
+           function randomnumber(min,max){
+               return Math.floor(Math.random() * (max-min+1) + min);
+           }
+            
+           function  playgame()
+           {
+             var field1 = randomnumber(1,99);
+             var field2 = randomnumber(1, 99);
+             document.getElementById('field1').innerHTML = field1;
+             document.getElementById('field2').innerHTML = field2;
+           }
        </script>
        
    </body>
