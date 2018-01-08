@@ -20,32 +20,33 @@
                 Sum Of <span id="field1" class="fieldinput" >5</span> and <span id="field2" class="fieldinput">5</span> ???
             </p>
                 <div class="top2">
-                    <div class=field-block>
-                        <div class="option" >
-                             <span id="option1" onclick="checkAnswer(this)"> 7</span>
-                        </div>
+                    <div class="field-block option" id="option1" onclick="checkAnswer(this)">
+                        
+                              7
+                        
 
                     </div>
-                    <div class=field-block>
-                        <div class="option" >
-                             <span id="option2" onclick="checkAnswer(this)">8</span>  
-                        </div>
+                    <div class="field-block option" id="option2" onclick="checkAnswer(this)">
+                        
+                              8  
+                        
 
                     </div>
-                    <div class=field-block>
-                        <div class="option" id="option3" onclick="checkAnswer(this)">
+                    <div class="field-block option"  id="option3" onclick="checkAnswer(this)">  
+                        
                                 9
-                        </div>
+                        
 
                     </div>
-                    <div class=field-block>
-                        <div class="option" id="option4" onclick="checkAnswer(this)">
+                    <div class="field-block option"  id="option4" onclick="checkAnswer(this)"> 
+                         
                               10
-                        </div>
-
-                    </div>
+                     </div>
                  </div> 
-                 <div class="play-again">
+                 <div id="after" class="after hide">
+                 
+                 </div>       
+                 <div class="play-again" onclick="playAgain()">
                       <p style="text-align:center;margin:auto;color:white;font-size:15px;">
                           Play again!
                       </p>
@@ -56,15 +57,15 @@
        </div>
        <script>
           
-           var riddel={};
+           var riddle={};
            function randomnumber(min,max){
                return Math.floor(Math.random() * (max-min+1) + min);
            }
             
            function  playgame()
            {
-             var field1 = randomnumber(1,99);
-             var field2 = randomnumber(1,99);
+             var field1 = randomnumber(10,99);
+             var field2 = randomnumber(10,99);
              var result = field1 + field2;
              var resultsArray = getRandomOption(result);
              resultsArray.push(result);
@@ -77,6 +78,7 @@
                     resultsArray: resultsArray,
                     answer: result
                 };   
+                
                 
                
                
@@ -113,6 +115,35 @@
            }
            return resultArray;
         }
+
+        function checkAnswer(selectedElement){
+            console.log(selectedElement);
+            console.log(selectedElement.innerHTML);
+
+            var after=document.getElementById('after');
+            console.log(riddle.answer)
+            if(selectedElement.innerHTML == riddle.answer){
+               
+                after.classList.remove('hide');
+                after.classList.add('correct');
+                after.innerHTML="Correct answer.Good Job!"
+            }
+            else{
+                after.classList.remove('hide');
+                after.classList.add('wrong');
+                 after.innerHTML = "Wrong answer.Try Harder!"
+            }
+
+        }
+
+        function playAgain(){
+           var after=document.getElementById('after')
+         after.classList.remove('correct');
+         after.classList.remove('wrong');
+         after.classList.add('hide');
+         playgame();
+        }
+
 
 
        </script>
